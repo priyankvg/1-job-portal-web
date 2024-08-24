@@ -14,6 +14,12 @@ import AdminJobs from "./components/admin/AdminJobs";
 import PostJob from './components/admin/PostJob'
 import Applicants from './components/admin/Applicants'
 import ProtectedRoute from './components/admin/ProtectedRoute'
+import 'slick-carousel/slick/slick.css'; 
+import 'slick-carousel/slick/slick-theme.css';
+import AboutUs from './components/About'
+import ContactUs from './components/shared/ContactUs'
+import PrivacyPolicy from './components/shared/Privacy'
+
 
 
 const appRouter = createBrowserRouter([
@@ -45,6 +51,20 @@ const appRouter = createBrowserRouter([
     path: "/profile",
     element: <Profile />
   },
+{
+  path: "/aboutus",
+  element: <AboutUs/>
+},
+{
+  path: "/contactus",
+  element: <ContactUs/>
+},
+
+{
+  path: "/privacy",
+  element: <PrivacyPolicy/>
+},
+
   // admin ke liye yha se start hoga
   {
     path:"/admin/companies",

@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux'
 import AdminJobsTable from './AdminJobsTable'
 import useGetAllAdminJobs from '@/hooks/useGetAllAdminJobs'
 import { setSearchJobByText } from '@/redux/jobSlice'
+import Footer from '../shared/Footer'
 
 const AdminJobs = () => {
   useGetAllAdminJobs();
@@ -31,6 +32,7 @@ const AdminJobs = () => {
         </div>
         <AdminJobsTable />
       </div>
+      <Footer/>
     </div>
   )
 }

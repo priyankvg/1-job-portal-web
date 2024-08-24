@@ -30,37 +30,54 @@ const Navbar = () => {
     }
     return (
         <div className='bg-white'>
-            <div className='flex items-center justify-between mx-auto max-w-7xl h-16'>
+            <div className='flex items-center justify-between mx-auto max-w-8xl h-16 shadow-lg' >
                 <div>
-                    <h1 className='text-2xl font-bold'>Job<span className='text-[#F83002]'>Portal</span></h1>
+                    <h1 className='text-2xl font-bold'>Career<span className='text-[#0ed2f7]'>Hive</span> </h1>
                 </div>
                 <div className='flex items-center gap-12'>
                     <ul className='flex font-medium items-center gap-5'>
                         {
                             user && user.role === 'recruiter' ? (
                                 <>
-                                    <li><Link to="/admin/companies">Companies</Link></li>
-                                    <li><Link to="/admin/jobs">Jobs</Link></li>
+                                    <li className='text-2xl  rounded-full font-bold text-[#0ed2f7] hover-effect'><Link to="/admin/companies">Companies</Link></li>
+                                    <li className='text-2xl  rounded-full font-bold text-[#0ed2f7] hover-effect'><Link to="/admin/jobs">Jobs</Link></li>
                                 </>
                             ) : (
                                 <>
-                                    <li><Link to="/">Home</Link></li>
-                                    <li><Link to="/jobs">Jobs</Link></li>
-                                    <li><Link to="/browse">Browse</Link></li>
+                                    <li className='text-2xl rounded-full font-bold text-[#0ed2f7] hover-effect'><Link to="/">Home</Link></li>
+                                    <li className='text-2xl rounded-full font-bold text-[#0ed2f7] hover-effect'><Link to="/jobs">Jobs</Link></li>
+                                    <li className='text-2xl rounded-full font-bold text-[#0ed2f7] hover-effect'><Link to="/browse">Browse</Link></li>
                                 </>
                             )
                         }
 
 
                     </ul>
+                                        <style jsx>{`
+                            .hover-effect {
+                            transition: background-color 0.3s ease, color 0.3s ease;
+                            }
+
+                            .hover-effect:hover {
+                            background-color: #0056b3;
+                           
+                            }
+
+                            .hover-effect:hover  {
+                            color: #fff; 
+                            }
+
+                           
+                        `}</style>
                     {
                         !user ? (
                             <div className='flex items-center gap-2'>
                                 <Link to="/login"><Button variant="outline">Login</Button></Link>
-                                <Link to="/signup"><Button className="bg-[#6A38C2] hover:bg-[#5b30a6]">Signup</Button></Link>
+                                <Link to="/signup"><Button className="bg-[#0ed2f7] hover:bg-[#0ed9f7]">Signup</Button></Link>
                             </div>
                         ) : (
-                            <Popover>
+                            <Popover >
+                               
                                 <PopoverTrigger asChild>
                                     <Avatar className="cursor-pointer">
                                         <AvatarImage src={user?.profile?.profilePhoto} alt="@shadcn" />
@@ -87,16 +104,16 @@ const Navbar = () => {
                                                 )
                                             }
 
-                                            <div className='flex w-fit items-center gap-2 cursor-pointer'>
+                                            <div className='flex w-fit items-center gap-2 cursor-pointer '>
                                                 <LogOut />
                                                 <Button onClick={logoutHandler} variant="link">Logout</Button>
                                             </div>
                                         </div>
-                                    </div>
+                                        </div>
                                 </PopoverContent>
                             </Popover>
                         )
-                    }
+                    } 
 
                 </div>
             </div>

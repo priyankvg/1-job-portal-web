@@ -27,8 +27,8 @@ const CategoryCarousel = () => {
                 <CarouselContent>
                     {
                         category.map((cat, index) => (
-                            <CarouselItem className="md:basis-1/2 lg-basis-1/3">
-                                <Button onClick={()=>searchJobHandler(cat)} variant="outline" className="rounded-full">{cat}</Button>
+                            <CarouselItem className="md:basis-1/2 lg-basis-1/3 ">
+                                <Button onClick={()=>searchJobHandler(cat)} variant="outline" className="rounded-full hover-effect">{cat}</Button>
                             </CarouselItem>
                         ))
                     }
@@ -36,6 +36,19 @@ const CategoryCarousel = () => {
                 <CarouselPrevious />
                 <CarouselNext />
             </Carousel>
+            <style jsx>{`
+        .hover-effect {
+          transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .hover-effect:hover {
+          background-color: #0ed2f7; 
+        }
+
+        .hover-effect:hover  {
+          color: #fff; 
+        }
+      `}</style>
         </div>
     )
 }

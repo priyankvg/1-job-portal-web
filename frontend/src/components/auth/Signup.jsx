@@ -11,6 +11,8 @@ import { toast } from 'sonner'
 import { useDispatch, useSelector } from 'react-redux'
 import { setLoading } from '@/redux/authSlice'
 import { Loader2 } from 'lucide-react'
+import Hero from '../Backgroundsignup'
+import Footer from '../shared/Footer'
 
 const Signup = () => {
 
@@ -68,11 +70,12 @@ const Signup = () => {
         }
     },[])
     return (
-        <div>
+        <div  >
             <Navbar />
-            <div className='flex items-center justify-center max-w-7xl mx-auto'>
-                <form onSubmit={submitHandler} className='w-1/2 border border-gray-200 rounded-md p-4 my-10'>
-                    <h1 className='font-bold text-xl mb-5'>Sign Up</h1>
+            <div className='flex items-center justify-center max-w-7xl mx-auto'  >
+                <Hero />
+                <form onSubmit={submitHandler} className='w-1/2 border border-gray-200  rounded-md p-4 my-10'>
+                    <h1 className='font-bold  text-xl mb-5'>Sign Up</h1>
                     <div className='my-2'>
                         <Label>Full Name</Label>
                         <Input
@@ -80,7 +83,7 @@ const Signup = () => {
                             value={input.fullname}
                             name="fullname"
                             onChange={changeEventHandler}
-                            placeholder="patel"
+                            placeholder="Enter your Name"
                         />
                     </div>
                     <div className='my-2'>
@@ -90,7 +93,7 @@ const Signup = () => {
                             value={input.email}
                             name="email"
                             onChange={changeEventHandler}
-                            placeholder="patel@gmail.com"
+                            placeholder="Enter your Email Address"
                         />
                     </div>
                     <div className='my-2'>
@@ -100,7 +103,7 @@ const Signup = () => {
                             value={input.phoneNumber}
                             name="phoneNumber"
                             onChange={changeEventHandler}
-                            placeholder="8080808080"
+                            placeholder="Please Enter your phone Number"
                         />
                     </div>
                     <div className='my-2'>
@@ -110,7 +113,7 @@ const Signup = () => {
                             value={input.password}
                             name="password"
                             onChange={changeEventHandler}
-                            placeholder="patel@gmail.com"
+                            placeholder="Enter your Password"
                         />
                     </div>
                     <div className='flex items-center justify-between'>
@@ -154,6 +157,7 @@ const Signup = () => {
                     <span className='text-sm'>Already have an account? <Link to="/login" className='text-blue-600'>Login</Link></span>
                 </form>
             </div>
+            <Footer/>
         </div>
     )
 }

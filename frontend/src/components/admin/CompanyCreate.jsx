@@ -9,6 +9,7 @@ import { COMPANY_API_END_POINT } from '@/utils/constant'
 import { toast } from 'sonner'
 import { useDispatch } from 'react-redux'
 import { setSingleCompany } from '@/redux/companySlice'
+import Footer from '../shared/Footer'
 
 const CompanyCreate = () => {
     const navigate = useNavigate();
@@ -53,6 +54,7 @@ const CompanyCreate = () => {
                     <Button onClick={registerNewCompany}>Continue</Button>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }
